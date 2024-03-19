@@ -7,17 +7,13 @@ for j in range(1,n+1):#rotation n fois pour ajouter les n objets dans la list d'
     #on veut declarer une list vide au debut de chaque rotation pour qu'on peut ajouter nouveau objet
     List = []
     #la liste est dans la boucle For car nous avons besoin qu'elle soit vide à chaque fois que nous voulons ajouter un nouvel objet
-    for i in range(1,4):#3 rotation pour ajoutez le nom, poid, et l importance de chaque objet dans list
-        if i == 1:
-            List.append(str(input("Entrez le nom de votre objet: ")))
-        elif i == 2:
-            List.append(float(input("Donnez le poids de ce objet(en KG): ")))
-        elif i == 3:
-            importance = float(input("Évaluer l'importance de l'objet (sur 10): "))
-            while importance < 0 or importance > 10:
-                importance = float(input("SVP,Évaluer l'importance de l'objet sur 10 pour faciliter les choses: "))
-            List.append(importance)
-            Les_objets.append(List)
+    List.append(str(input("Entrez le nom de votre objet: ")))
+    List.append(float(input("Donnez le poids de ce objet(en KG): ")))
+    importance = float(input("Évaluer l'importance de l'objet (sur 10): "))
+    while importance < 0 or importance > 10:
+        importance = float(input("SVP,Évaluer l'importance de l'objet sur 10 pour faciliter les choses: "))
+    List.append(importance)
+    Les_objets.append(List)
 
 
 Les_objets.sort(reverse=True, key=lambda objet: objet[2])
